@@ -30,3 +30,6 @@ results/
 .idea/
 *.swp
 .DS_Store
+
+prompts/
+docs/
