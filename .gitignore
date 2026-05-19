@@ -1,0 +1,32 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Data & artifacts
+data/raw/
+data/**/*.parquet
+data/**/*.jsonl
+logs/
+results/
+*.log
+
+# Model caches
+.cache/
+~/.cache/huggingface/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
