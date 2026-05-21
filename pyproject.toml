@@ -13,6 +13,15 @@ dependencies = [
     "datasets>=2.20",
     "scikit-learn>=1.5",
     "matplotlib>=3.9",
+    # Phase 2 baselines.
+    # NOTE: install torch with CUDA support FIRST, before `pip install -e .`,
+    # otherwise transformers pulls the CPU wheel from PyPI:
+    #   pip install torch --index-url https://download.pytorch.org/whl/cu121
+    "xgboost>=2.0",
+    "transformers>=4.44",
+    "accelerate>=0.30",
+    # Phase 3 LLM benchmark.
+    "groq>=0.18",
 ]
 
 [project.optional-dependencies]
