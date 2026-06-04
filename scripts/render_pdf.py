@@ -265,6 +265,13 @@ def main() -> int:
         font-size: 12pt;
         margin-top: 14pt;
     }
+    .repo {
+        text-align: center;
+        font-size: 10pt;
+        margin-top: 24pt;
+        color: #444;
+    }
+    .repo a { color: #444; text-decoration: underline; }
     .pagebreak { page-break-after: always; }
     h1 {
         font-size: 16pt;
@@ -335,6 +342,7 @@ def main() -> int:
 <p class="author">{author}</p>
 <p class="date">{date}</p>
 <p class="course">Course: Data Mining &mdash; Final Project</p>
+<p class="repo"><a href="https://github.com/dogussaglam/classification-with-llm">https://github.com/dogussaglam/classification-with-llm</a></p>
 
 <div class="pagebreak"></div>
 

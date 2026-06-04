@@ -1,6 +1,6 @@
 ---
 title: "Large Language Models vs Classical Baselines for Text Classification: A Replication of Kostina et al. 2025 with Reasoning-Model Extensions"
-author: "Doğuş Sağlam"
+author: "Doğuş Sağlamtundu"
 date: "4 June 2026"
 abstract: |
   We replicate Kostina et al. 2025 (arXiv:2501.08457) on two small datasets and add three extensions. Datasets: FakeNewsNet PolitiFact (210, binary) and a Glassdoor review set (204, 3-class work-location). Baselines (5-fold CV): NB, LinearSVC, Random Forest, XGBoost, fine-tuned RoBERTa. We test four 2025 LLMs via Groq: Llama 3.1 8B, Llama 3.3 70B, Qwen3 32B (reasoning on and off), and GPT-OSS 120B. Each LLM runs three prompts (ZS, ZS_CoT, FS_CoT_RP_NA) at temperature 0. We ran 4554 LLM calls with one parse failure. On FakeNewsNet, NB wins at F1 0.900, exactly matching the paper, and every LLM trails by 5.9 points or more. On Employee Reviews, Llama 3.3 70B with FS_CoT_RP_NA scores 0.862, beating fine-tuned RoBERTa (0.750) by 11.2 points. The strongest finding is on built-in reasoning. GPT-OSS 120B scores only 0.66 on FakeNewsNet, 14 points behind Llama 3.3 70B. The Qwen3 reasoning toggle flips direction across tasks: −4.3 points on binary FNN, +3.0 points on 3-class ER. Built-in reasoning is not a free replacement for prompt-engineered chain-of-thought.
@@ -302,3 +302,4 @@ Prompt complexity has a small effect on ER (within 0.2 F1). On FNN, ZS_CoT is a 
 - LLM params: `temperature=0`, one pass per record. `reasoning_effort="medium"` for GPT-OSS; Qwen3 toggled between `"none"` and `"default"`.
 - Source: `src/llm_textcls/`. Regenerate with `python scripts/build_report.py`.
 - Raw results: `results/llms/all_results.parquet` (4554 rows), `results/baselines/raw.parquet` (50 rows).
+- Repository: https://github.com/dogussaglam/classification-with-llm
