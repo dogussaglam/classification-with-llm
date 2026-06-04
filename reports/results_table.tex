@@ -1,0 +1,20 @@
+\begin{table}
+\caption{Master results — best prompt per (model, dataset). Bold = highest F1 in the column.}
+\label{tab:master}
+\begin{tabular}{llcrclcr}
+\toprule
+Model & Family & FNN F1 & FNN Best Prompt & FNN Latency (ms) & ER F1 & ER Best Prompt & ER Latency (ms) \\
+\midrule
+Naive Bayes (TF-IDF) & classical_ml & \textbf{0.900} & — & 0.5 & 0.459 & — & 0.2 \\
+LinearSVC (TF-IDF) & classical_ml & 0.880 & — & 0.6 & 0.657 & — & 0.2 \\
+RoBERTa-base (fine-tuned) & roberta & 0.856 & — & 11.0 & 0.750 & — & 11.0 \\
+Random Forest (TF-IDF) & classical_ml & 0.790 & — & 2.1 & 0.624 & — & 2.2 \\
+XGBoost (TF-IDF) & classical_ml & 0.774 & — & 1.9 & 0.714 & — & 0.2 \\
+Llama 3.3 70B & llama & 0.841 & FS_CoT_RP_NA & 6426.0 & \textbf{0.862} & FS_CoT_RP_NA & 4308.0 \\
+GPT-OSS 120B (reasoning=medium) & gpt_oss & 0.661 & ZS_CoT & 5249.0 & 0.849 & FS_CoT_RP_NA & 3905.0 \\
+Qwen3 32B (reasoning=default) & qwen & 0.790 & ZS & 7786.0 & 0.834 & ZS & 4740.0 \\
+Qwen3 32B (reasoning=none) & qwen & 0.833 & ZS & 4433.0 & 0.804 & ZS & 2386.0 \\
+Llama 3.1 8B & llama & 0.823 & ZS_CoT & 5275.0 & 0.795 & ZS_CoT & 3220.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
